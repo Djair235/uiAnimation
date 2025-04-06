@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ui animation teste</title>
     <style>
+
         * {
             padding: 0;
             margin: 0;
@@ -17,8 +17,7 @@
             background-color: #121212;
         }
 
-        #dotOne,
-        #dotTwo {
+        #dotOne, #dotTwo {
             position: absolute;
             height: 15px;
             width: 15px;
@@ -27,7 +26,6 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            transition: 1s;
         }
 
         #middleLine {
@@ -38,6 +36,20 @@
             width: 2px;
             transition: 1s;
             background-color: #ffffff;
+        }
+
+        #middleLine {
+            animation: middleLine 0.5s ease-out forwards;
+        }
+
+        #dotOne {
+            transition: 1s;
+            animation: dotOneDown 0.5s ease-out forwards;
+        }
+
+        #dotTwo {
+            transition: 1s;
+            animation: dotTwoDown 0.5s ease-out forwards;
         }
 
         @keyframes dotOneDown {
@@ -71,41 +83,11 @@
             }
         }
 
-        .invisible {
-            visibility: hidden;
-        }
-
-        .visible {
-            visibility: visible;
-        }
     </style>
 </head>
-
 <body>
-    <div id="dotOne" class="invisible"></div>
-    <div id="middleLine" class="invisible"></div>
-    <div id="dotTwo" class="invisible"></div>
+    <div id="dotOne"></div>
+    <div id="middleLine"></div>
+    <div id="dotTwo"></div>
 </body>
-<script>
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const dotOne = document.getElementById("dotOne")
-        const dotTwo = document.getElementById("dotTwo")
-        const middleLine = document.getElementById("middleLine")
-
-
-        dotOne.classList.replace("invisible", "visible")
-        dotTwo.classList.replace("invisible", "visible")
-        middleLine.classList.replace("invisible", "visible")
-        setTimeout(() => {
-            dotOne.style.animation = "dotOneDown 0.5s ease-out forwards";
-            dotTwo.style.animation = "dotTwoDown 0.5s ease-out forwards";
-            middleLine.style.animation = "middleLine 0.5s ease-out forwards";
-
-        }, 2000)
-    })
-
-</script>
-
 </html>
