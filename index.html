@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ui animation teste</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #121212;
+        }
+
+        #dotOne, #dotTwo {
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #middleLine {
+            position: absolute;
+            left: 50%;
+            margin-left: 6.4px;
+            top: 50%;
+            width: 2px;
+            transition: 1s;
+            background-color: #ffffff;
+        }
+
+        #middleLine {
+            animation: middleLine 0.5s ease-out forwards;
+        }
+
+        #dotOne {
+            transition: 1s;
+            animation: dotOneDown 0.5s ease-out forwards;
+        }
+
+        #dotTwo {
+            transition: 1s;
+            animation: dotTwoDown 0.5s ease-out forwards;
+        }
+
+        @keyframes dotOneDown {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(100px);
+            }
+        }
+
+        @keyframes dotTwoDown {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes middleLine {
+            0% {
+                height: 0px;
+            }
+
+            100% {
+                height: 200px;
+                margin-top: -95px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="dotOne"></div>
+    <div id="middleLine"></div>
+    <div id="dotTwo"></div>
+</body>
+</html>
